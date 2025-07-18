@@ -4,6 +4,7 @@ body {
   color: #1f2937;
   margin: 0;
   padding: 0;
+  transition: background 0.3s, color 0.3s;
 }
 
 .container {
@@ -48,11 +49,16 @@ h3 {
   gap: 1rem;
 }
 
-.project {
+.project.card {
   background: #ffffff;
   border: 1px solid #cbd5e1;
   padding: 1rem;
   border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.project.card:hover {
+  transform: scale(1.02);
 }
 
 .project h4 {
@@ -66,4 +72,30 @@ h3 {
 
 a:hover {
   text-decoration: underline;
+}
+
+#darkModeToggle {
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+body.dark {
+  background: #1e293b;
+  color: #f8fafc;
+}
+body.dark .project.card {
+  background: #334155;
+  border-color: #475569;
+}
+body.dark .tags span {
+  background: #475569;
+  color: #e2e8f0;
+}
+body.dark a {
+  color: #60a5fa;
 }
