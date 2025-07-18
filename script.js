@@ -1,40 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
   const darkBtn = document.getElementById("darkModeToggle");
-  const typingText = document.getElementById("typing-text");
-  const titles = [
-    "Full-Stack Developer",
-    "Laravel Enthusiast",
-    "WordPress Wizard",
-    "Electron Tinkerer",
-    "ReactJS Explorer"
-  ];
-  let titleIndex = 0;
-  let charIndex = 0;
-
-  function type() {
-    if (charIndex < titles[titleIndex].length) {
-      typingText.textContent += titles[titleIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type, 80);
-    } else {
-      setTimeout(erase, 1500);
-    }
-  }
-
-  function erase() {
-    if (charIndex > 0) {
-      typingText.textContent = titles[titleIndex].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(erase, 40);
-    } else {
-      titleIndex = (titleIndex + 1) % titles.length;
-      setTimeout(type, 500);
-    }
-  }
-
-  type();
+  const projectContainer = document.getElementById("projectContainer");
 
   darkBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
+  });
+
+  fetch("https://api.github.com/users/abrahamvado/repos")
+    .then(res => res.json())
+    .then(data => {
+      data.forEach(repo => {
+        const techs = repo.topics?.join(" ") || "General";
+        const div = document.createElement("div");
+        div.className = "project card " + techs;
+        div.setAttribute("data-tags", techs);
+        div.innerHTML = `
+          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+          <p>${repo.description || "No description provided."}</p>
+        `;
+        projectContainer.appendChild(div);
+      });
+    });
+
+  const buttons = document.querySelectorAll("[data-filter]");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+      document.querySelectorAll(".project").forEach(card => {
+        if (filter === "all" || card.getAttribute("data-tags").includes(filter)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
   });
 });

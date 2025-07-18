@@ -9,17 +9,37 @@
 <body>
   <div class="container">
     <h1>Abraham Gómez</h1>
-    <p class="tags">🚀 Laravel | 🔌 Electron | 📦 WordPress | 💼 Product-Oriented | 🇲🇽 Remote Ready</p>
-    <h2 id="typing-text"></h2>
+    <h2>Full Stack Developer</h2>
     <p class="summary">
       I specialize in building real-world systems using Laravel, Electron, WordPress, ReactJS, Java, and more. I focus on user-oriented development and test-first programming (TDD).
     </p>
 
     <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
 
-    <h3>📬 Contact Me</h3>
+    <h3>🔍 Filter by Technology</h3>
+    <div id="filterButtons" class="filter-buttons">
+      <button data-filter="all">All</button>
+      <button data-filter="Laravel">Laravel</button>
+      <button data-filter="ReactJS">ReactJS</button>
+      <button data-filter="WordPress">WordPress</button>
+      <button data-filter="Electron">Electron</button>
+      <button data-filter="Java">Java</button>
+    </div>
+
+    <h3>🚀 Projects</h3>
+    <div id="projectContainer" class="projects"></div>
+
+    <h3>📣 LinkedIn Insights</h3>
+    <div class="linkedin-feed">
+      <div class="linkedin-post">
+        <p>🧪 Using Playwright + ReactJS for true Test-Driven Development. Write tests first, code follows!</p>
+        <a href="#">Read on LinkedIn →</a>
+      </div>
+    </div>
+
+    <h3>Contact</h3>
+    <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
     <p>
-      <a href="mailto:your.email@example.com">your.email@example.com</a> |
       <a href="https://linkedin.com/in/dev-abraham-gomez" target="_blank">LinkedIn</a> |
       <a href="https://github.com/abrahamvado" target="_blank">GitHub</a>
     </p>
