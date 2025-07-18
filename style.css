@@ -1,49 +1,44 @@
 body {
   font-family: sans-serif;
-  background: white;
-  color: black;
   margin: 0;
   padding: 1rem;
-  transition: background 0.3s, color 0.3s;
-}
-body.dark {
-  background: #121212;
-  color: white;
+  background: #f7f7f7;
+  color: #333;
 }
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
 }
-.project.card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin: 1rem 0;
+h1, h2 {
+  margin-bottom: 0.2em;
+}
+.summary {
+  margin-bottom: 2em;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.project-card {
+  background: white;
   border-radius: 8px;
-  background: #f8f8f8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 1rem;
+  text-align: center;
 }
-body.dark .project.card {
-  background: #1e1e1e;
-  border-color: #333;
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
 }
-.filter-buttons button {
-  margin: 0.5rem;
-  padding: 0.4rem 1rem;
-  border: none;
-  background: #007acc;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.filter-buttons button:hover {
-  background: #005fa3;
-}
-.linkedin-feed {
+.linkedin-widget {
   margin-top: 2rem;
 }
-.linkedin-post {
+.post-card {
   background: #e0f2fe;
-  border-left: 4px solid #0ea5e9;
   padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #0284c7;
 }

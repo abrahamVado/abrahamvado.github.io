@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abraham Gómez – Full Stack Developer</title>
+  <title>Abraham Gómez – Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,73 +11,45 @@
     <h1>Abraham Gómez</h1>
     <h2>Full Stack Developer</h2>
     <p class="summary">
-      I specialize in delivering scalable, user-focused applications using Laravel, WordPress, Electron, JavaScript, and ReactJS. I bridge the gap between end-users and development teams with a strong focus on testing (TDD/Playwright), CFDI 4.0 compliance, and real-world solutions.
+      I specialize in delivering scalable, user-focused applications using technologies like Laravel, WordPress, Electron, JavaScript, and ReactJS. I bridge the gap between end-users and development teams with a strong focus on testing (TDD/Playwright), CFDI 4.0 compliance, and real-world solutions.
     </p>
 
-    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
-
-    <h3>🔍 Filter by Technology</h3>
-    <div id="filterButtons" class="filter-buttons">
-      <button data-filter="all">All</button>
-      <button data-filter="Laravel">Laravel</button>
-      <button data-filter="ReactJS">ReactJS</button>
-      <button data-filter="WordPress">WordPress</button>
-      <button data-filter="Electron">Electron</button>
-      <button data-filter="Java">Java</button>
-    </div>
-
     <h3>🚀 Projects</h3>
-    <div id="projectContainer" class="projects">
-      <div class="project card Laravel">
-        <h4><a href="https://github.com/YOUR_USERNAME/payroll-demo-app" target="_blank">Payroll System Demo</a></h4>
-        <p>Laravel app simulating payroll and SAP mock integration, built with TDD.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="project1.jpg" alt="Project 1" />
+        <h4>Payroll System (Laravel)</h4>
+        <p>Mock payroll system with SAP integration and TDD architecture.</p>
       </div>
-      <div class="project card ReactJS">
-        <h4><a href="https://github.com/YOUR_USERNAME/rewards-ui" target="_blank">Rewards Platform UI</a></h4>
-        <p>ReactJS frontend for HR incentive management. Playwright tests included.</p>
+      <div class="project-card">
+        <img src="project2.jpg" alt="Project 2" />
+        <h4>Rewards UI (ReactJS)</h4>
+        <p>HR incentive frontend UI with Playwright tests and REST APIs.</p>
       </div>
-      <div class="project card WordPress">
-        <h4><a href="https://github.com/YOUR_USERNAME/tourism-marketplace-plugin" target="_blank">Tourism Plugin</a></h4>
-        <p>WordPress plugin syncing listings from GetYourGuide and Civitatis via REST API.</p>
+      <div class="project-card">
+        <img src="project3.jpg" alt="Project 3" />
+        <h4>Tourism Plugin (WordPress)</h4>
+        <p>Marketplace listing sync with GetYourGuide and Civitatis.</p>
       </div>
-      <div class="project card Electron">
-        <h4><a href="#">Electron Desktop Admin Tool</a></h4>
-        <p>Local Laravel + Electron app for internal staff tools (coming soon).</p>
-      </div>
-      <div class="project card Java">
-        <h4><a href="#">Java Data Utility</a></h4>
-        <p>Java+MySQL data processor for reports and imports (coming soon).</p>
+      <div class="project-card">
+        <img src="project4.jpg" alt="Project 4" />
+        <h4>Desktop Tool (Electron)</h4>
+        <p>Internal Laravel+Electron-based desktop utility (prototype).</p>
       </div>
     </div>
 
     <h3>📣 LinkedIn Insights</h3>
-    <div class="linkedin-feed">
-      <div class="linkedin-post">
-        <p>🧪 TDD with Playwright + ReactJS. Writing tests first clarifies the UI logic and makes development smooth!</p>
-        <a href="https://linkedin.com/posts/dev-abraham-gomez_playwright-tdd-front-testing" target="_blank">Read on LinkedIn →</a>
+    <div class="linkedin-widget">
+      <div class="post-card">
+        <p>🧪 TDD with Playwright + ReactJS helps me build confidently from the start.</p>
       </div>
-      <div class="linkedin-post">
-        <p>📄 Migrated a full system to CFDI 4.0 using SAT’s Anexo 20. Refined XML handling and validation.</p>
-        <a href="https://linkedin.com/posts/dev-abraham-gomez_cfdi4-php-laravel-xml" target="_blank">Read on LinkedIn →</a>
+      <div class="post-card">
+        <p>📄 CFDI 4.0 migration success with Anexo 20 XML validation.</p>
       </div>
-      <div class="linkedin-post">
-        <p>🔌 Built a plugin that connects WordPress tourism sites to GetYourGuide and Civitatis via REST APIs.</p>
-        <a href="https://linkedin.com/posts/dev-abraham-gomez_wordpress-plugin-api-integration" target="_blank">Read on LinkedIn →</a>
-      </div>
-      <div class="linkedin-post">
-        <p>🐧 Bash script to auto-deploy Laravel apps with Supervisor. Saves hours during client setups.</p>
-        <a href="https://linkedin.com/posts/dev-abraham-gomez_laravel-linux-devops" target="_blank">Read on LinkedIn →</a>
+      <div class="post-card">
+        <p>🔌 WordPress tourism integration plugin for listings automation.</p>
       </div>
     </div>
-
-    <h3>📬 Contact</h3>
-    <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>
-      <a href="https://linkedin.com/in/dev-abraham-gomez" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/abrahamvado" target="_blank">GitHub</a>
-    </p>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
