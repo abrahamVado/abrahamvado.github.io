@@ -1,38 +1,67 @@
+const toggle = document.getElementById("darkModeToggle");
+const prefersDark = localStorage.getItem("dark-mode") === "true";
+
+if (prefersDark) {
+  document.body.classList.add("dark");
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  const isDark = document.body.classList.contains("dark");
+  localStorage.setItem("dark-mode", isDark);
+
+  // Force repaint to fix visual glitch in mobile
+  void document.body.offsetWidth;
+});
+
+const buttons = document.querySelectorAll("[data-filter]");
+const projects = document.querySelectorAll(".project-card");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    projects.forEach(project => {
+      const show = filter === "all" || project.classList.contains(filter);
+      project.style.display = show ? "block" : "none";
+      project.style.opacity = show ? "1" : "0";
+      project.style.pointerEvents = show ? "auto" : "none";
+      project.style.transition = "opacity 0.3s ease";
+    });
+  });
+});
 document.addEventListener("DOMContentLoaded", () => {
-  const darkBtn = document.getElementById("darkModeToggle");
-  const projectContainer = document.getElementById("projectContainer");
+  const defaultLang = "en"; // fallback language
+  const langButtons = document.querySelectorAll(".lang-btn");
 
-  darkBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-  });
+  // Apply language to the page
+  function setLanguage(lang) {
+    document.documentElement.setAttribute("lang", lang);
+    localStorage.setItem("preferredLang", lang);
+    // TODO: Optional: Trigger actual translation logic here
+    console.log("Language set to:", lang);
+  }
 
-  fetch("https://api.github.com/users/abrahamvado/repos")
-    .then(res => res.json())
-    .then(data => {
-      data.forEach(repo => {
-        const techs = repo.topics?.join(" ") || "General";
-        const div = document.createElement("div");
-        div.className = "project card " + techs;
-        div.setAttribute("data-tags", techs);
-        div.innerHTML = `
-          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
-          <p>${repo.description || "No description provided."}</p>
-        `;
-        projectContainer.appendChild(div);
-      });
-    });
+  // Detect or load saved language
+  function initLanguage() {
+    const storedLang = localStorage.getItem("preferredLang");
+    if (storedLang) {
+      setLanguage(storedLang);
+    } else {
+      const browserLang = navigator.language.slice(0, 2); // "es" or "en"
+      const supported = ["en", "es"];
+      setLanguage(supported.includes(browserLang) ? browserLang : defaultLang);
+    }
+  }
 
-  const buttons = document.querySelectorAll("[data-filter]");
-  buttons.forEach(btn => {
+  // Event listeners for flag buttons
+  langButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const filter = btn.getAttribute("data-filter");
-      document.querySelectorAll(".project").forEach(card => {
-        if (filter === "all" || card.getAttribute("data-tags").includes(filter)) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+      const lang = btn.dataset.lang;
+      setLanguage(lang);
+      // TODO: Also reload text elements if needed
     });
   });
+
+  initLanguage();
 });
