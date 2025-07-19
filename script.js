@@ -1,7 +1,12 @@
 const toggle = document.getElementById("darkModeToggle");
-const prefersDark = localStorage.getItem("dark-mode") === "true";
+const langButtons = document.querySelectorAll(".lang-btn");
+const filterButtons = document.querySelectorAll("[data-filter]");
+const projectCards = document.querySelectorAll(".project-card");
+const supportedLangs = ["en", "es"];
+const defaultLang = "en";
 
-if (prefersDark) {
+// === DARK MODE ===
+if (localStorage.getItem("dark-mode") === "true") {
   document.body.classList.add("dark");
 }
 
@@ -9,19 +14,15 @@ toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   const isDark = document.body.classList.contains("dark");
   localStorage.setItem("dark-mode", isDark);
-
-  // Force repaint to fix visual glitch in mobile
-  void document.body.offsetWidth;
+  void document.body.offsetWidth; // repaint fix
 });
 
-const buttons = document.querySelectorAll("[data-filter]");
-const projects = document.querySelectorAll(".project-card");
-
-buttons.forEach(button => {
+// === PROJECT FILTERING ===
+filterButtons.forEach(button => {
   button.addEventListener("click", () => {
     const filter = button.dataset.filter;
 
-    projects.forEach(project => {
+    projectCards.forEach(project => {
       const show = filter === "all" || project.classList.contains(filter);
       project.style.display = show ? "block" : "none";
       project.style.opacity = show ? "1" : "0";
@@ -30,38 +31,47 @@ buttons.forEach(button => {
     });
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const defaultLang = "en"; // fallback language
-  const langButtons = document.querySelectorAll(".lang-btn");
 
-  // Apply language to the page
-  function setLanguage(lang) {
-    document.documentElement.setAttribute("lang", lang);
-    localStorage.setItem("preferredLang", lang);
-    // TODO: Optional: Trigger actual translation logic here
-    console.log("Language set to:", lang);
-  }
+// === LANGUAGE SWITCHING ===
+function setLanguage(lang) {
+  if (!supportedLangs.includes(lang)) lang = defaultLang;
 
-  // Detect or load saved language
-  function initLanguage() {
-    const storedLang = localStorage.getItem("preferredLang");
-    if (storedLang) {
-      setLanguage(storedLang);
-    } else {
-      const browserLang = navigator.language.slice(0, 2); // "es" or "en"
-      const supported = ["en", "es"];
-      setLanguage(supported.includes(browserLang) ? browserLang : defaultLang);
+  localStorage.setItem("language", lang);
+  document.documentElement.setAttribute("lang", lang);
+  translatePage(lang);
+  highlightActiveLang(lang);
+}
+
+function translatePage(lang) {
+  const elements = document.querySelectorAll("[data-i18n]");
+  elements.forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      el.classList.add("fade-out");
+      setTimeout(() => {
+        el.innerHTML = translations[lang][key];
+        el.classList.remove("fade-out");
+      }, 150);
     }
-  }
+  });
+}
 
-  // Event listeners for flag buttons
+function highlightActiveLang(lang) {
+  langButtons.forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("language") || navigator.language.slice(0, 2);
+  const initialLang = supportedLangs.includes(savedLang) ? savedLang : defaultLang;
+  setLanguage(initialLang);
+
   langButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
-      setLanguage(lang);
-      // TODO: Also reload text elements if needed
+      const selectedLang = btn.getAttribute("data-lang");
+      setLanguage(selectedLang);
     });
   });
-
-  initLanguage();
 });
+  

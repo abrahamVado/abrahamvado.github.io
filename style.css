@@ -365,13 +365,11 @@ body.dark .contact-inline a:hover {
 .lang-btn img {
   width: 28px;
   height: 20px;
-  border-radius: 3px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
 }
 
 .lang-btn:hover {
   background-color: rgba(76, 126, 243, 0.1); /* accent-blue light */
-  transform: scale(1.1);
+  
 }
 
 body.dark .lang-btn:hover {
@@ -488,4 +486,33 @@ body.dark .business-card {
 }
 .card-footer .read-more:hover {
   color: var(--accent-green);
+}
+/* ---------------------------------------------
+   TRANSLATIONS
+--------------------------------------------- */
+.lang-btn{
+  border:0px;
+}
+.lang-btn.active {
+    padding: 6px 8px;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.lang-btn.active:hover {
+  background: var(--accent-green);
+}
+[data-i18n] {
+  transition: opacity 0.3s ease;
+}
+.fade-out {
+  opacity: 0.2 !important;
+}
+body.dark .lang-btn.active {
+  background: var(--accent-yellow);
+  color: black;
 }

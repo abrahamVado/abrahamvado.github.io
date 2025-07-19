@@ -11,198 +11,229 @@
     <div class="container header-flex">
       <div class="title-group">
         <h1>Abraham Gómez</h1>
-        <h2>Full Stack Developer</h2>
+        <h2 data-i18n="header.subtitle">Full Stack Developer</h2>
       </div>
 
       <div class="header-right">
         <div class="contact-inline">
-          <p><a href="mailto:abraham.vado@gmail.com">📧 abraham.vado@gmail.com</a></p>
-          <p><a href="https://www.linkedin.com/in/dev-abraham-gomez/" target="_blank">🔗 LinkedIn</a></p>
-          <p><a href="https://abrahamvado.github.io/" target="_blank">🌐 GitHub Page</a></p>
+          <p><a href="mailto:abraham.vado@gmail.com">📧 <span data-i18n="header.email">abraham.vado@gmail.com</span></a></p>
+          <p><a href="https://www.linkedin.com/in/dev-abraham-gomez/" target="_blank">🔗 <span data-i18n="header.linkedin">LinkedIn</span></a></p>
+          <p><a href="https://abrahamvado.github.io/" target="_blank">🌐 <span data-i18n="header.github">GitHub Page</span></a></p>
         </div>
 
         <div class="actions">
-          <button id="darkModeToggle">🌙</button>
-  <div class="language-switcher">
-    <button class="lang-btn" data-lang="en" title="English">
-      <img src="https://flagcdn.com/us.svg" alt="English" />
-    </button>
-    <button class="lang-btn" data-lang="es" title="Español">
-      <img src="https://flagcdn.com/mx.svg" alt="Español" />
-    </button>
-  </div>
-
-
+          <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+          <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en" title="English">
+              <img src="https://flagcdn.com/us.svg" alt="English" />
+            </button>
+            <button class="lang-btn" data-lang="es" title="Español">
+              <img src="https://flagcdn.com/mx.svg" alt="Español" />
+            </button>
+          </div>
           <img src="myown.png" alt="Abraham Gómez" class="profile-pic" />
         </div>
       </div>
     </div>
   </header>
 
+
   <div class="container">
-    <p class="summary">
+    <p class="section-description" data-i18n="summary.text">
       I specialize in building scalable, user-centered applications with technologies like Laravel, WordPress, Electron, JavaScript, and ReactJS. I’m passionate about delivering real-world solutions that prioritize performance, maintainability, and developer experience. I thrive at bridging the gap between users and developers, and I enjoy working with infrastructure tools like AWS, Hetzner, and custom VPS configurations to ensure reliable, efficient deployments.
     </p>
+
     <section class="business-section">
-      <h3>💼 Open Source & Business</h3>
-      <p class="section-description">
+      <h3 data-i18n="business.title">💼 Open Source & Business</h3>
+      <p class="section-description" data-i18n="business.description">
         Powerful open source tools to help businesses grow without expensive licenses. These apps are free to use, easy to deploy, and built to solve real-world problems efficiently.
       </p>
       <div class="business-grid">
         <div class="business-card">
           <img src="images/multilogin.gif" alt="Multilogin Laravel Package" />
-          <h4>Multilogin App</h4>
-          <p>Laravel package to configure multiple login setups easily, ideal for SaaS or admin-user systems.</p>
+          <h4 data-i18n="business.project1.title">Multilogin App</h4>
+          <p data-i18n="business.project1.description">
+            Laravel package to configure multiple login setups easily, ideal for SaaS or admin-user systems.
+          </p>
           <div class="card-footer">
-            <span class="tag">Laravel</span>
-            <a href="#" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="business.project1.tag">Laravel</span>
+            <a href="#" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
 
         <div class="business-card">
           <img src="images/restaurant.gif" alt="Restaurant Management App" />
-          <h4>Restaurant App</h4>
-          <p>ElectronJS + Laravel app that helps restaurants manage menus, orders, and reports both offline and online.</p>
+          <h4 data-i18n="business.project2.title">Restaurant App</h4>
+          <p data-i18n="business.project2.description">
+            ElectronJS + Laravel app that helps restaurants manage menus, orders, and reports both offline and online.
+          </p>
           <div class="card-footer">
-            <span class="tag">Electron</span>
-            <a href="#" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="business.project2.tag">Electron</span>
+            <a href="#" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
 
         <div class="business-card">
           <img src="images/nautilus.gif" alt="Nautilus Legal Extraction Tool" />
-          <h4>Nautilus App</h4>
-          <p>Legal document extractor for CFDI & RUG XMLs – parse, validate, and convert into structured formats.</p>
+          <h4 data-i18n="business.project3.title">Nautilus App</h4>
+          <p data-i18n="business.project3.description">
+            Legal document extractor for CFDI & RUG XMLs – parse, validate, and convert into structured formats.
+          </p>
           <div class="card-footer">
-            <span class="tag">Laravel</span>
-            <a href="#" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="business.project3.tag">Laravel</span>
+            <a href="#" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
       </div>
     </section>
-    <section class="news_blog_section">
-      <h3>✍️ News & Blog</h3>
-      <p class="section-description">
-        Insights, tutorials, and personal reflections from my development journey. From Laravel tips to cloud deployments, these posts highlight the tools and strategies I use in real-world scenarios.
-      </p>
 
-      <div class="blog-section">
-        <article>
-          <img src="images/playwright.jpg" alt="Playwright E2E Testing" class="blog-thumb" />
-          <h4>🧪 Scaling with Playwright + Laravel</h4>
-          <p>Why end-to-end testing with Playwright has become my go-to for frontend and API validation.</p>
-          <a href="#">Read more →</a>
-        </article>
-        
-        <article>
-          <img src="images/xdebug.jpg" alt="Xdebug Debugging" class="blog-thumb" />
-          <h4>🐞 Debugging Like a Pro with Xdebug</h4>
-          <p>A deep dive into PHP debugging with Xdebug—config, breakpoints, and stepping through logic.</p>
-          <a href="#">Read more →</a>
-        </article>    
-        <article>
-          <img src="images/azure10.jpg" alt="Azure with Laravel 10" class="blog-thumb" />
-          <h4>🔐 Azure Active Directory with Laravel 10 & PHP 8+</h4>
-          <p>Documenting the updates required to upgrade Azure authentication from Laravel 8 to Laravel 10.</p>
-          <a href="https://www.linkedin.com/pulse/azure-active-directory-laravel-10-php-8-abraham-g%C3%B3mez/" target="_blank">Read more →</a>
-        </article>
-        
-        <article>
-          <img src="images/forks.jpg" alt="Forks and Branches" class="blog-thumb" />
-          <h4>🚀 Forks and Branches: A Guide Through the Galaxy</h4>
-          <p>A practical walkthrough for Git collaboration using forks and branches via Bitbucket & Git.</p>
-          <a href="https://www.linkedin.com/pulse/forks-branches-guide-trought-galaxy-abraham-g%C3%B3mez/" target="_blank">Read more →</a>
-        </article>
-        
-        <article>
-          <img src="images/aws-vps.jpg" alt="AWS EC2 VPS Setup" class="blog-thumb" />
-          <h4>☁️ Creating a VPS + Web Server with Amazon EC2</h4>
-          <p>Step-by-step guide to launching a VPS on AWS EC2, including web server setup tips.</p>
-          <a href="https://www.linkedin.com/pulse/creando-un-vps-web-server-con-amazon-ec2-abraham-g%C3%B3mez/" target="_blank">Read more →</a>
-        </article>
-        
-        <article>
-          <img src="images/azure8.jpg" alt="Azure with Laravel 8" class="blog-thumb" />
-          <h4>🌀 Azure Active Directory with Laravel 8</h4>
-          <p>Beginner-friendly tutorial for building an Azure-based authentication system in Laravel 8.</p>
-          <a href="https://www.linkedin.com/pulse/azure-active-directory-con-laravel-8-abraham-g%C3%B3mez/" target="_blank">Read more →</a>
-        </article>
-      </div>
-    </section>
+  <section class="news_blog_section">
+    <h3 data-i18n="blog.title">✍️ News & Blog</h3>
+    <p class="section-description" data-i18n="blog.description">
+      Insights, tutorials, and personal reflections from my development journey. From Laravel tips to cloud deployments, these posts highlight the tools and strategies I use in real-world scenarios.
+    </p>
+
+    <div class="blog-section">
+      <article>
+        <img src="images/playwright.jpg" alt="Playwright E2E Testing" class="blog-thumb" />
+        <h4 data-i18n="blog.article1.title">🧪 Scaling with Playwright + Laravel</h4>
+        <p data-i18n="blog.article1.description">
+          Why end-to-end testing with Playwright has become my go-to for frontend and API validation.
+        </p>
+        <a href="#" data-i18n="readMore">Read more →</a>
+      </article>
+      
+      <article>
+        <img src="images/xdebug.jpg" alt="Xdebug Debugging" class="blog-thumb" />
+        <h4 data-i18n="blog.article2.title">🐞 Debugging Like a Pro with Xdebug</h4>
+        <p data-i18n="blog.article2.description">
+          A deep dive into PHP debugging with Xdebug—config, breakpoints, and stepping through logic.
+        </p>
+        <a href="#" data-i18n="readMore">Read more →</a>
+      </article>    
+
+      <article>
+        <img src="images/1684122392205.jpg" alt="Azure with Laravel 10" class="blog-thumb" />
+        <h4 data-i18n="blog.article3.title">🔐 Azure Active Directory with Laravel 10 & PHP 8+</h4>
+        <p data-i18n="blog.article3.description">
+          Documenting the updates required to upgrade Azure authentication from Laravel 8 to Laravel 10.
+        </p>
+        <a href="https://www.linkedin.com/pulse/azure-active-directory-laravel-10-php-8-abraham-g%C3%B3mez/" target="_blank" data-i18n="readMore">Read more →</a>
+      </article>
+      
+      <article>
+        <img src="images/1683742574566.jpg" alt="Forks and Branches" class="blog-thumb" />
+        <h4 data-i18n="blog.article4.title">🚀 Forks and Branches: A Guide Through the Galaxy</h4>
+        <p data-i18n="blog.article4.description">
+          A practical walkthrough for Git collaboration using forks and branches via Bitbucket & Git.
+        </p>
+        <a href="https://www.linkedin.com/pulse/forks-branches-guide-trought-galaxy-abraham-g%C3%B3mez/" target="_blank" data-i18n="readMore">Read more →</a>
+      </article>
+      
+      <article>
+        <img src="images/1577419119980.jpg" alt="AWS EC2 VPS Setup" class="blog-thumb" />
+        <h4 data-i18n="blog.article5.title">☁️ Creating a VPS + Web Server with Amazon EC2</h4>
+        <p data-i18n="blog.article5.description">
+          Step-by-step guide to launching a VPS on AWS EC2, including web server setup tips.
+        </p>
+        <a href="https://www.linkedin.com/pulse/creando-un-vps-web-server-con-amazon-ec2-abraham-g%C3%B3mez/" target="_blank" data-i18n="readMore">Read more →</a>
+      </article>
+      
+      <article>
+        <img src="images/1600188296566.jpg" alt="Azure with Laravel 8" class="blog-thumb" />
+        <h4 data-i18n="blog.article6.title">🌀 Azure Active Directory with Laravel 8</h4>
+        <p data-i18n="blog.article6.description">
+          Beginner-friendly tutorial for building an Azure-based authentication system in Laravel 8.
+        </p>
+        <a href="https://www.linkedin.com/pulse/azure-active-directory-con-laravel-8-abraham-g%C3%B3mez/" target="_blank" data-i18n="readMore">Read more →</a>
+      </article>
+    </div>
+  </section>
+
     <section class="projects_section">
-      <h3>🚀 Projects</h3>
-      <p class="section-description">
+      <h3 data-i18n="projects.title">🚀 Projects</h3>
+      <p class="section-description" data-i18n="projects.description">
         A curated collection of impactful and real-world projects built with Laravel, ReactJS, WordPress, Electron, and more. Filter by technology to explore selected GitHub, Bitbucket, and GitLab repositories—many are part of larger or private systems. Please note that some dependencies or credentials required for full execution may not be publicly available or free.
       </p>
 
       <div id="filterButtons" class="filter-buttons">
-        <button data-filter="all">All</button>
-        <button data-filter="Laravel">Laravel</button>
-        <button data-filter="ReactJS">ReactJS</button>
-        <button data-filter="WordPress">WordPress</button>
-        <button data-filter="Electron">Electron</button>
-        <button data-filter="Java">Java</button>
-      </div>      
+        <button data-filter="all" data-i18n="projects.filter.all">All</button>
+        <button data-filter="Laravel" data-i18n="projects.filter.laravel">Laravel</button>
+        <button data-filter="ReactJS" data-i18n="projects.filter.reactjs">ReactJS</button>
+        <button data-filter="WordPress" data-i18n="projects.filter.wordpress">WordPress</button>
+        <button data-filter="Electron" data-i18n="projects.filter.electron">Electron</button>
+        <button data-filter="Java" data-i18n="projects.filter.java">Java</button>
+      </div>
+
       <div id="projectContainer" class="projects-grid">
         <div class="project-card Laravel">
           <img src="project1.gif" alt="Project 1" />
-          <h4>Payroll System</h4>
-          <p>Laravel + SAP payroll integration</p>
+          <h4 data-i18n="projects.item1.title">Payroll System</h4>
+          <p data-i18n="projects.item1.description">Laravel + SAP payroll integration</p>
           <div class="card-footer">
-            <span class="tag">Laravel</span>
-            <a href="https://github.com/YOUR_USERNAME/payroll-system" target="_blank" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="projects.filter.laravel">Laravel</span>
+            <a href="https://github.com/YOUR_USERNAME/payroll-system" target="_blank" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
 
         <div class="project-card ReactJS">
           <img src="project2.gif" alt="Project 2" />
-          <h4>Rewards UI</h4>
-          <p>ReactJS rewards dashboard with Playwright</p>
+          <h4 data-i18n="projects.item2.title">Rewards UI</h4>
+          <p data-i18n="projects.item2.description">ReactJS rewards dashboard with Playwright</p>
           <div class="card-footer">
-            <span class="tag">ReactJS</span>
-            <a href="https://github.com/YOUR_USERNAME/rewards-ui" target="_blank" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="projects.filter.reactjs">ReactJS</span>
+            <a href="https://github.com/YOUR_USERNAME/rewards-ui" target="_blank" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
 
         <div class="project-card WordPress">
           <img src="project3.gif" alt="Project 3" />
-          <h4>Tourism Plugin</h4>
-          <p>WordPress plugin for GetYourGuide & Civitatis</p>
+          <h4 data-i18n="projects.item3.title">Tourism Plugin</h4>
+          <p data-i18n="projects.item3.description">WordPress plugin for GetYourGuide & Civitatis</p>
           <div class="card-footer">
-            <span class="tag">WordPress</span>
-            <a href="https://github.com/YOUR_USERNAME/tourism-plugin" target="_blank" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="projects.filter.wordpress">WordPress</span>
+            <a href="https://github.com/YOUR_USERNAME/tourism-plugin" target="_blank" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
+
+        <!-- Optional: Repeat elements below with different data-i18n keys or remove duplicates -->
 
         <div class="project-card ReactJS">
           <img src="project2.gif" alt="Project 2" />
-          <h4>Rewards UI</h4>
-          <p>ReactJS rewards dashboard with Playwright</p>
+          <h4 data-i18n="projects.item2.title">Rewards UI</h4>
+          <p data-i18n="projects.item2.description">ReactJS rewards dashboard with Playwright</p>
           <div class="card-footer">
-            <span class="tag">ReactJS</span>
-            <a href="https://github.com/YOUR_USERNAME/rewards-ui" target="_blank" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="projects.filter.reactjs">ReactJS</span>
+            <a href="https://github.com/YOUR_USERNAME/rewards-ui" target="_blank" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
 
         <div class="project-card WordPress">
           <img src="project3.gif" alt="Project 3" />
-          <h4>Tourism Plugin</h4>
-          <p>WordPress plugin for GetYourGuide & Civitatis</p>
+          <h4 data-i18n="projects.item3.title">Tourism Plugin</h4>
+          <p data-i18n="projects.item3.description">WordPress plugin for GetYourGuide & Civitatis</p>
           <div class="card-footer">
-            <span class="tag">WordPress</span>
-            <a href="https://github.com/YOUR_USERNAME/tourism-plugin" target="_blank" class="read-more">Read more →</a>
+            <span class="tag" data-i18n="projects.filter.wordpress">WordPress</span>
+            <a href="https://github.com/YOUR_USERNAME/tourism-plugin" target="_blank" class="read-more" data-i18n="readMore">Read more →</a>
           </div>
         </div>
-      </div>    
-    </section>
-    <section class="download_section">
-      <h3>📦 Download Template</h3>
-      <div class="download-section">
-        <p>You can download this GitHub portfolio template and customize it for your own use.</p>
-        <a href="template.zip" class="download-button" download>⬇️ Download ZIP</a>
       </div>
     </section>
+
+    <section class="download_section">
+      <h3 data-i18n="download.title">📦 Download Template</h3>
+      <div class="download-section">
+        <p data-i18n="download.description">
+          You can download this GitHub portfolio template and customize it for your own use.
+        </p>
+        <a href="https://github.com/abrahamVado/abrahamvado.github.io/archive/refs/heads/main.zip" class="download-button" download data-i18n="download.button">
+          ⬇️ Download ZIP
+        </a>
+      </div>
+    </section>
+
   </div>
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
