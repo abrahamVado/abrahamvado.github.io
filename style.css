@@ -244,6 +244,7 @@ body.dark .tag:hover {
 }
 .filter-buttons button {
   margin-right: 0.5rem;
+  margin-top: 3px;
   padding: 0.5rem 1rem;
   background: var(--accent-blue);
   border: none;
@@ -264,6 +265,12 @@ body.dark .filter-buttons button {
 body.dark .filter-buttons button:hover {
   background: var(--accent-pink);
   color: white;
+}
+.project-card img {
+  width: 100%;           /* Fill the card horizontally */
+  height: 180px;         /* Fixed height for consistency */
+  object-fit: cover;     /* Crop image without distortion */
+  border-radius: 8px;    /* Optional: rounded corners */
 }
 
 /* ======================
